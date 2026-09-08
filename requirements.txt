@@ -10,4 +10,4 @@ langchain-core
 langchain-community
 langchain-openai
 langgraph
-httpx
+httpx 
