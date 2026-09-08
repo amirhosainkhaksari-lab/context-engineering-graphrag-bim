@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use this research prototype, please cite the associated manuscript."
+title: "Context Engineering GraphRAG for BIM Reasoning"
+type: software
+authors:
+  - family-names: Khaksari
+    given-names: Amirhossein
+  - family-names: Rahbar
+    given-names: Morteza
+repository-code: "https://github.com/YOUR-USERNAME/context-engineering-graphrag-bim"
+keywords:
+  - BIM
+  - IFC
+  - Knowledge Graph
+  - GraphRAG
+  - Context Engineering
+  - Large Language Models
+  - BIM Reasoning
