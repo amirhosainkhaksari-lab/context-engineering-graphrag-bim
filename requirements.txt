@@ -1,0 +1,13 @@
+ifcopenshell
+shapely
+neo4j
+chromadb
+sentence-transformers
+torch
+pydantic
+langchain
+langchain-core
+langchain-community
+langchain-openai
+langgraph
+httpx
