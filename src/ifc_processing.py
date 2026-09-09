@@ -1,14 +1,9 @@
 import ifcopenshell
 import ifcopenshell.util.element as el
-import re
 import ifcopenshell.util.unit
 import ifcopenshell.geom
-import numpy as np
 import collections
-from neo4j import GraphDatabase
 import json
-from langchain_huggingface import HuggingFaceEmbeddings
-from sentence_transformers import SentenceTransformer
 import torch
 
 
