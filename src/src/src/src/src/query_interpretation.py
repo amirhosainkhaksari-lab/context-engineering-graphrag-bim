@@ -1,8 +1,6 @@
 from enum import Enum
 from typing import List, Optional
-
 from pydantic import BaseModel, Field, field_validator
-
 
 class TopologyRelation(str, Enum):
     SHORTEST_PATH = "SHORTEST_PATH"        
@@ -14,6 +12,7 @@ class TopologyRelation(str, Enum):
     BOTTLENECK = "BOTTLENECK"            
     CENTRALITY = "CENTRALITY"           
     CRITICAL_ROUTE = "CRITICAL_ROUTE"   
+
 class BIMQuerySchema(BaseModel):
      
     element_type: str = Field(
