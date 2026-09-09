@@ -4,7 +4,6 @@ from typing import List, Optional
 from pydantic import BaseModel, Field, field_validator
 
 
-# تغییرات در کلاس TopologyRelation
 class TopologyRelation(str, Enum):
     SHORTEST_PATH = "SHORTEST_PATH"        
     ADJACENT = "ADJACENT"                  
@@ -12,11 +11,9 @@ class TopologyRelation(str, Enum):
     DOOR_ACCESS = "DOOR_ACCESS"            
     ANY_ACCESS = "ANY_ACCESS"              
     NONE = "NONE"
-    # ---> مقادیر جدید اضافه شده <---
-    BOTTLENECK = "BOTTLENECK"            # نقاط بحرانی (Articulation Points)
-    CENTRALITY = "CENTRALITY"            # شاهراه‌ها و مرکزیت (Betweenness)
-    CRITICAL_ROUTE = "CRITICAL_ROUTE"    # فضای حیاتی در یک مسیر خاص
-
+    BOTTLENECK = "BOTTLENECK"            
+    CENTRALITY = "CENTRALITY"           
+    CRITICAL_ROUTE = "CRITICAL_ROUTE"   
 class BIMQuerySchema(BaseModel):
      
     element_type: str = Field(
@@ -145,14 +142,12 @@ class BIMQuerySchema(BaseModel):
             "components embedded in walls, floors, or openings), it is a property or containment "
             "filtering task, NOT a circulation topology relation."
             
-
             "- 'NONE': STANDARD SPATIAL CONTAINMENT AND PHYSICAL BOUNDARY SHELL QUERIES. Select 'NONE' anytime the user is looking for "
             "physical architectural elements (e.g., walls, partitions, slabs, ceilings, doors) that bound, enclose, partition, or separate "
             "a reference space from its surroundings, or elements located inside a room. This ensures that queries regarding the physical "
             "enclosure, structural barriers, or bounding shells of a space are routed to the Space-to-Element boundary pipeline (e.g., BOUNDED_BY relation) "
             "rather than the abstract spatial network graph.\n\n"
             
-
             "- 'CENTRALITY': Global flow, network integration, and traffic prominence. Select when the query focuses on identifying high-traffic hubs, primary circulation anchors, major thoroughfares, or spaces that possess the highest continuous movement potential and global interconnectedness based on mathematical index scores (e.g., betweenness, closeness, or degree). Choose this when the user is searching for 'busy', 'integrated', or 'strategically central' nodes that facilitate high transit volumes, without implying that their closure would physically split or fragment the network structure. "
             
             "- 'BOTTLENECK': Topological resilience, single points of failure, and graph fragmentation. Select when the query focuses on network vulnerability, critical transit thresholds, choke points, or articulation points (cut-vertices) whose closure, removal, blockage, or compromise causes downstream ISOLATION, UNREACHABILITY, or complete physical disconnection of graph components. Choose this whenever the core intent is to identify structural bridge nodes that uniquely connect separate zones, where the loss of that single entity breaks network continuity and fragments the global graph topology."
