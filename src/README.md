@@ -6,9 +6,9 @@ The source code is organized according to the main processing stages of the syst
 
 - IFC processing
 - BIM knowledge graph construction
-- spatial accessibility enrichment
-- structured query interpretation
-- IFC schema alignment
-- graph retrieval and graph analytics
-- evidence processing
-- LLM-based tool interaction
+- spatial topology graph enrichment
+- structured BIM query interpretation
+- IFC schema alignment and retrieval specification
+- graph retrieval and subgraph selection
+- evidence consolidation and context preparation
+- evidence-grounded LLM reasoning
